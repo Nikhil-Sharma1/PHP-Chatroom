@@ -234,7 +234,7 @@ form .name-details .field:last-child {
   color: #468669;
 }
 /* use in php for offline status */
-.users-list a .status-dot .offline {
+.users-list a .status-dot.offline {
   color: #ccc;
 }
 

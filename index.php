@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if(isset($_SESSION['unique id']))
+  {
+    header("location: ../users.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +21,8 @@
       <header>Realtime Chat app</header>
       <form action="#" enctype="multipart/form-data" autocomplete="off">
       <!-- multipart form data is used for encoding input type="file" -->
+      <!-- each value is sent as a block of data ("body part"), with a user agent-defined delimiter ("boundary")
+       separating each part. The keys are given in the Content-Disposition header of each part. -->
         <div class="error-txt"></div>
         <div class="name-details">
           <div class="field input">

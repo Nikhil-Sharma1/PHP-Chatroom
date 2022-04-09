@@ -1,11 +1,28 @@
 const form = document.querySelector('.typing-area'),
   inputfield = form.querySelector('.input-field'),
   sendbtn = form.querySelector('button'),
-  chatbox = document.querySelector('.chat-box');
+  chatbox = document.querySelector('.chat-box'),
+  masterPlay = document.getElementById('folder'),
+  file = document.getElementById('Folder-content');
 
 form.onsubmit = (e) => {
   e.preventDefault();
 }
+console.log(file);
+
+masterPlay.addEventListener('click', () => {
+  if (masterPlay.classList.contains("fa-folder")) {
+    //alert("hi");
+    masterPlay.classList.remove('fa-folder');
+    file.style.display = "block";
+    masterPlay.classList.add('fa-folder-open');
+  }
+  else {
+    masterPlay.classList.remove('fa-folder-open');
+    masterPlay.classList.add('fa-folder');
+    file.style.display = "none";
+  }
+})
 
 sendbtn.onclick = () => {
   let x = new XMLHttpRequest();//creating xml object
